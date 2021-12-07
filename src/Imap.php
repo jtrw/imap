@@ -63,8 +63,14 @@ class Imap
         $header = imap_headerinfo($this->connection, $index) ?: null;
         $body = imap_body($this->connection, $index) ?: null;
         $structure = imap_fetchstructure($this->connection, $index) ?: null;
-        
-        return new ResponseDto($index, $header, $body, $structure);
+        $uuid = imap_uid($this->connection, $index);
+
+        return new ResponseDto($index, $uuid, $header, $body, $structure);
+    }
+    
+    public function getIndexByUuid(string $uid): int
+    {
+        return imap_msgno($this->connection, $uid);
     }
     
     public function getLastInboxMessage()

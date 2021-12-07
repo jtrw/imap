@@ -7,16 +7,18 @@ use stdClass;
 class ResponseDto
 {
     private int $index;
+    private string $uuid;
     private StdClass $header;
     private string $body;
     private stdClass $structure;
     
-    public function __construct(int $index, StdClass $header, string $body, stdClass $structure)
+    public function __construct(int $index, string $uuid, StdClass $header, string $body, stdClass $structure)
     {
         $this->index = $index;
         $this->header = $header;
         $this->body = $body;
         $this->structure = $structure;
+        $this->uuid = $uuid;
     }
     
     public function getIndex(): int
@@ -37,5 +39,10 @@ class ResponseDto
     public function getStructure()
     {
         return $this->structure;
+    }
+    
+    public function getUuid(): string
+    {
+        return $this->uuid;
     }
 }
