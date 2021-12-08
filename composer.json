@@ -17,7 +17,8 @@
         }
     ],
     "require": {
-        "php" : ">=7.4"
+        "php" : ">=7.4",
+        "ext-imap": "*"
     },
     "require-dev": {
         "phpunit/phpunit" : ">=8.0",
@@ -34,8 +35,8 @@
     },
     "scripts": {
         "test": "phpunit",
-        "check-style": "phpcs src tests",
-        "fix-style": "phpcbf src tests"
+        "check-style": "phpcs src",
+        "fix-style": "phpcbf src"
     },
     "config": {
         "sort-packages": true
