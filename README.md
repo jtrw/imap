@@ -1,4 +1,7 @@
 # PHP Imap
+# Install
+
+`composer require jtrw/imap`
 
 ## Example 
 ```php
