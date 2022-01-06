@@ -1,4 +1,4 @@
-<?php
+<?php declare(strict_types=1);
 
 namespace Jtrw\Imap;
 
@@ -29,7 +29,7 @@ class ResponseDto
         $this->structure = $structure;
         $this->uuid = $uuid;
         $this->files = $files;
-    }
+    } // end __construct
     
     /**
      * @return int
@@ -37,7 +37,7 @@ class ResponseDto
     public function getIndex(): int
     {
         return $this->index;
-    }
+    } // end getIndex
     
     /**
      * @return stdClass
@@ -45,7 +45,7 @@ class ResponseDto
     public function getHeader(): stdClass
     {
         return $this->header;
-    }
+    } // end getHeader
     
     /**
      * @return string
@@ -53,15 +53,15 @@ class ResponseDto
     public function getBody(): string
     {
         return $this->body;
-    }
+    } // end getBody
     
     /**
      * @return stdClass
      */
-    public function getStructure()
+    public function getStructure(): stdClass
     {
         return $this->structure;
-    }
+    } // end getStructure
     
     /**
      * @return string
@@ -69,7 +69,7 @@ class ResponseDto
     public function getUuid(): string
     {
         return $this->uuid;
-    }
+    } // end getUuid
     
     /**
      * @return array
@@ -77,5 +77,5 @@ class ResponseDto
     public function getFiles(): array
     {
         return $this->files;
-    }
+    } // end getFiles
 }
