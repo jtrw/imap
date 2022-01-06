@@ -1,4 +1,4 @@
-<?php
+<?php declare(strict_types=1);
 
 namespace Jtrw\Imap;
 
@@ -12,17 +12,16 @@ class ImapFactory
     public static function factory(string $providerName, string $userName, string $password)
     {
         switch ($providerName) {
-        case 'ukr':
-            $imapServer = static::IMAP_UKR_NET;
-            break;
-        case 'gmail':
-            $imapServer = static::IMAP_GMAIL;
-            break;
-        default:
-            throw new ImapProviderNotFound("Provider {$providerName} Not Found");
+            case 'ukr':
+                $imapServer = static::IMAP_UKR_NET;
+                break;
+            case 'gmail':
+                $imapServer = static::IMAP_GMAIL;
+                break;
+            default:
+                throw new ImapProviderNotFound("Provider {$providerName} Not Found");
         }
         
         return new Imap($userName, $password, $imapServer);
-        
     }
 }
